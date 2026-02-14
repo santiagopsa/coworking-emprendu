@@ -105,7 +105,7 @@ export default function VideoHero() {
             </div>
 
             <p className="mt-3 text-xs text-white/55">
-              Season 0: Events -> Season 1: Venues -> Season 2: Hospitality.
+              Season 0: Events -&gt; Season 1: Venues -&gt; Season 2: Hospitality.
             </p>
           </div>
         </div>
