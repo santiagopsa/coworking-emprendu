@@ -4,7 +4,12 @@ import { useEffect, useRef } from "react";
 import Container from "../ui/Container";
 import { ensureGsap } from "@/lib/gsap";
 
-export default function Lore() {
+type LoreProps = {
+  locale?: "en" | "es";
+};
+
+export default function Lore({ locale = "en" }: LoreProps) {
+  const isEs = locale === "es";
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,20 +40,32 @@ export default function Lore() {
       <Container>
         <div className="max-w-3xl">
           <div data-reveal className="text-sm font-semibold text-firo-blue">
-            Lore
+            {isEs ? "Historia" : "Lore"}
           </div>
           <h2 data-reveal className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-            The world didn’t run out of work — it ran out of reliable operators.
+            {isEs
+              ? "El mundo no se quedo sin trabajo: se quedo sin operadores confiables."
+              : "The world didn’t run out of work — it ran out of reliable operators."}
           </h2>
           <p data-reveal className="mt-4 text-white/70">
-            FIRO converts humanoid robots into an asset class: measurable utilization, managed uptime,
-            and transparent payouts. Start where the environment is controlled, then unlock harder quests.
+            {isEs
+              ? "FIRO convierte robots humanoides en una clase de activo: utilizacion medible, uptime gestionado y pagos transparentes. Empezamos en entornos controlados y luego desbloqueamos mercados mas complejos."
+              : "FIRO converts humanoid robots into an asset class: measurable utilization, managed uptime, and transparent payouts. Start where the environment is controlled, then unlock harder quests."}
           </p>
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            <Card title="Scarcity" desc="Human availability is volatile. Demand isn’t." />
-            <Card title="Control" desc="Events & venues have budgets, scope, and schedules." />
-            <Card title="Scale" desc="Playbooks compound. Capability unlocks over time." />
+            <Card
+              title={isEs ? "Escasez" : "Scarcity"}
+              desc={isEs ? "La disponibilidad humana es volatil. La demanda no." : "Human availability is volatile. Demand isn’t."}
+            />
+            <Card
+              title={isEs ? "Control" : "Control"}
+              desc={isEs ? "Eventos y recintos tienen presupuesto, alcance y cronograma." : "Events & venues have budgets, scope, and schedules."}
+            />
+            <Card
+              title={isEs ? "Escala" : "Scale"}
+              desc={isEs ? "Los playbooks se acumulan. La capacidad se desbloquea con el tiempo." : "Playbooks compound. Capability unlocks over time."}
+            />
           </div>
         </div>
       </Container>

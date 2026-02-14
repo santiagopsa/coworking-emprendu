@@ -7,19 +7,19 @@ import Rewards from "@/components/sections/Rewards";
 import RoiCalc from "@/components/sections/RoiCalc";
 import Join from "@/components/sections/Join";
 
-export default function Page() {
+export default function PageEs() {
   return (
     <main id="top">
-      <Nav />
-      <VideoHero />
-      <Lore />
-      <Levels />
+      <Nav locale="es" />
+      <VideoHero locale="es" />
+      <Lore locale="es" />
+      <Levels locale="es" />
       <div id="thesis">
-        <StickySwap />
+        <StickySwap locale="es" />
       </div>
-      <Rewards />
-      <RoiCalc />
-      <Join />
+      <Rewards locale="es" />
+      <RoiCalc locale="es" />
+      <Join locale="es" />
     </main>
   );
 }

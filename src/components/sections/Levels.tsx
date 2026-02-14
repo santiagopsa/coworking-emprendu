@@ -30,8 +30,40 @@ const levels = [
     does: "Compliance, reporting, and fleet control",
   },
 ];
+const levelsEs = [
+  {
+    level: "Nivel 1",
+    title: "Eventos",
+    earns: "Rentas diarias + activaciones de marca",
+    does: "Check-in, orientacion y guia de asistentes",
+  },
+  {
+    level: "Nivel 2",
+    title: "Recintos",
+    earns: "Colocaciones recurrentes + uptime con SLA",
+    does: "Flujos front-of-house, mesa de informacion, agenda",
+  },
+  {
+    level: "Nivel 3",
+    title: "Hospitalidad",
+    earns: "Ventanas de utilizacion mas altas",
+    does: "Tareas de concierge + rutinas de servicio guiadas",
+  },
+  {
+    level: "Nivel 4",
+    title: "Empresarial",
+    earns: "Contratos de flota + operacion multi-sede",
+    does: "Cumplimiento, reportes y control de flota",
+  },
+];
 
-export default function Levels() {
+type LevelsProps = {
+  locale?: "en" | "es";
+};
+
+export default function Levels({ locale = "en" }: LevelsProps) {
+  const isEs = locale === "es";
+  const levelItems = isEs ? levelsEs : levels;
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -62,17 +94,19 @@ export default function Levels() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div className="md:sticky md:top-28">
-            <div className="text-sm font-semibold text-firo-blue">Levels</div>
+            <div className="text-sm font-semibold text-firo-blue">{isEs ? "Niveles" : "Levels"}</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Capability unlocks.
+              {isEs ? "Desbloqueo de capacidades." : "Capability unlocks."}
             </h2>
             <p className="mt-4 text-firo-muted">
-              We don’t start on “hard mode”. We start in controlled environments, build playbooks, then unlock new markets.
+              {isEs
+                ? "No empezamos en modo dificil. Comenzamos en entornos controlados, construimos playbooks y luego abrimos nuevos mercados."
+                : "We don’t start on “hard mode”. We start in controlled environments, build playbooks, then unlock new markets."}
             </p>
           </div>
 
           <div className="grid gap-4">
-            {levels.map((l) => (
+            {levelItems.map((l) => (
               <div
                 key={l.title}
                 data-level
@@ -85,8 +119,8 @@ export default function Levels() {
                 <div className="mt-2 text-xl font-semibold tracking-tight">{l.title}</div>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-2">
-                  <Stat label="How it earns" value={l.earns} />
-                  <Stat label="What it does" value={l.does} />
+                  <Stat label={isEs ? "Como genera ingresos" : "How it earns"} value={l.earns} />
+                  <Stat label={isEs ? "Que hace" : "What it does"} value={l.does} />
                 </div>
               </div>
             ))}

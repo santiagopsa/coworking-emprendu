@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   publisher: "FIRO",
   alternates: {
     canonical: "/",
+    languages: {
+      en: "/",
+      es: "/es",
+    },
   },
   robots: {
     index: true,

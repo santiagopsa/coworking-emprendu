@@ -10,8 +10,20 @@ const cards = [
   { title: "Operations moat", desc: "Maintenance, remote ops, compliance and scheduling." },
   { title: "Capability unlocks", desc: "More tasks over time via software + playbooks." },
 ];
+const cardsEs = [
+  { title: "Modelo de activo", desc: "Propiedad estructurada, utilizacion clara y uptime medible." },
+  { title: "Colocacion de demanda", desc: "Ubicamos robots donde ya existe presupuesto: primero eventos." },
+  { title: "Moat operativo", desc: "Mantenimiento, operacion remota, cumplimiento y agenda." },
+  { title: "Desbloqueos de capacidad", desc: "Mas tareas con el tiempo via software y playbooks." },
+];
 
-export default function StickySwap() {
+type StickySwapProps = {
+  locale?: "en" | "es";
+};
+
+export default function StickySwap({ locale = "en" }: StickySwapProps) {
+  const isEs = locale === "es";
+  const cardsToRender = isEs ? cardsEs : cards;
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,18 +58,19 @@ export default function StickySwap() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2">
           <div className="md:sticky md:top-24 md:h-fit">
-            <div className="text-sm font-semibold text-firo-blue">The thesis</div>
+            <div className="text-sm font-semibold text-firo-blue">{isEs ? "La tesis" : "The thesis"}</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              The next asset class is operational.
+              {isEs ? "La proxima clase de activos es operativa." : "The next asset class is operational."}
             </h2>
             <p className="mt-4 max-w-lg text-firo-muted">
-              We start in controlled environments with clear budgets (events), then expand
-              capabilities as software playbooks mature.
+              {isEs
+                ? "Empezamos en entornos controlados con presupuestos claros (eventos), luego expandimos capacidades a medida que maduran los playbooks de software."
+                : "We start in controlled environments with clear budgets (events), then expand capabilities as software playbooks mature."}
             </p>
           </div>
 
           <div className="grid gap-4">
-            {cards.map((c) => (
+            {cardsToRender.map((c) => (
               <div
                 key={c.title}
                 data-swap-item
