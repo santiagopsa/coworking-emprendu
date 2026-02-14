@@ -72,7 +72,7 @@ export default function VideoHero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-              Managed units typically start around $39k. Returns are shown as scenario targets,
+              Managed units typically start around $44k. Returns are shown as scenario targets,
               not guarantees, and include a dedicated operator on every active robot day.
             </p>
 

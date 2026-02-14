@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Container from "../ui/Container";
 
 export default function RoiCalc() {
-  const assetPrice = 39000;
+  const assetPrice = 44000;
   const [days, setDays] = useState(10);
   const [rate, setRate] = useState(650);
   const [operatorDay, setOperatorDay] = useState(220);
@@ -17,8 +17,9 @@ export default function RoiCalc() {
     const other = gross * otherOps;
     const net = gross - operator - other;
     const investor = Math.max(0, net * investorShare);
+    const firoFee = Math.max(0, net - investor);
     const annualYield = assetPrice > 0 ? (investor * 12) / assetPrice : 0;
-    return { gross, operator, other, net, investor, annualYield };
+    return { gross, operator, other, net, investor, firoFee, annualYield };
   }, [days, rate, operatorDay, otherOps]);
 
   const scenarios = useMemo(
@@ -41,7 +42,7 @@ export default function RoiCalc() {
             </h2>
             <p className="mt-4 text-firo-muted">
               Formula: Gross = days x day rate. Net = Gross - operator cost - other ops.
-              Investor payout shown below assumes a 70% share of net and is not guaranteed.
+              Investor pocketed amount shown below assumes a 70% share of net and is not guaranteed.
             </p>
 
             <div className="mt-8 space-y-6 rounded-2xl border border-firo-line bg-firo-bg p-6">
@@ -76,7 +77,7 @@ export default function RoiCalc() {
                     <div className="text-xs font-semibold text-firo-muted">{s.name}</div>
                     <div className="mt-1 text-lg font-semibold">${Math.round(investor).toLocaleString()}</div>
                     <div className="mt-1 text-xs text-firo-muted">
-                      Investor payout at {s.days}d x ${s.rate}/d
+                      Investor pocketed at {s.days}d x ${s.rate}/d
                     </div>
                   </div>
                 );
@@ -85,12 +86,15 @@ export default function RoiCalc() {
           </div>
 
           <div className="rounded-3xl bg-firo-navy p-8 text-white shadow-soft">
-            <div className="text-sm text-white/60">Estimated investor monthly</div>
+            <div className="text-sm text-white/60">Estimated investor pocketed monthly</div>
             <div className="mt-2 text-4xl font-semibold tracking-tight">
               ${Math.round(result.investor).toLocaleString()}
             </div>
             <div className="mt-2 text-white/60">
               Gross: ${Math.round(result.gross).toLocaleString()} • Operator: ${Math.round(result.operator).toLocaleString()} • Other ops: ${Math.round(result.other).toLocaleString()} • Net: ${Math.round(result.net).toLocaleString()}
+            </div>
+            <div className="mt-1 text-white/60">
+              Investor payout (70%): ${Math.round(result.investor).toLocaleString()} • FIRO fee (30%): ${Math.round(result.firoFee).toLocaleString()}
             </div>
             <div className="mt-1 text-white/60">
               Target annual yield: {(result.annualYield * 100).toFixed(1)}% (assuming ${assetPrice.toLocaleString()} unit cost)
