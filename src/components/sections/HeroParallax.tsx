@@ -74,6 +74,13 @@ export default function HeroParallax() {
           className="object-cover"
         />
       </div>
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to bottom, #fff 0, #fff 1px, transparent 2px, transparent 6px)",
+        }}
+      />
 
       <Container>
         <div className="relative z-10 flex min-h-[100vh] items-center py-16">
@@ -85,7 +92,11 @@ export default function HeroParallax() {
               </div>
 
               <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
-                Robotic assets, <span className="text-firo-blue">real yield</span>.
+                Deploy.{" "}
+                <span className="text-firo-blue drop-shadow-[0_0_22px_rgba(37,99,255,.45)]">
+                  Operate.
+                </span>{" "}
+                Earn.
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
