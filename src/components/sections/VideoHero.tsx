@@ -1,0 +1,124 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Container from "../ui/Container";
+import { ensureGsap } from "@/lib/gsap";
+
+export default function VideoHero() {
+  const root = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const { gsap } = ensureGsap();
+    if (!root.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        "[data-counter]",
+        { innerText: 0 },
+        {
+          innerText: 3240,
+          duration: 1.2,
+          ease: "power2.out",
+          snap: { innerText: 1 },
+          scrollTrigger: { trigger: root.current!, start: "top 70%" },
+        } as any
+      );
+    }, root);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={root}
+      className="relative min-h-[100vh] overflow-hidden bg-firo-navy text-white"
+    >
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/video/firo-hero-poster.jpg"
+      >
+        <source src="/video/firo-hero.webm" type="video/webm" />
+        <source src="/video/firo-hero.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-firo-navy/85" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to bottom, rgba(255,255,255,.9) 0, rgba(255,255,255,.9) 1px, transparent 2px, transparent 7px)",
+        }}
+      />
+
+      <Container>
+        <div className="relative z-10 flex min-h-[100vh] items-center py-16">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/80">
+              <span className="h-2 w-2 rounded-full bg-firo-blue" />
+              FIRO Robotic Assets
+            </div>
+
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
+              Deploy.{" "}
+              <span className="text-firo-blue drop-shadow-[0_0_22px_rgba(37,99,255,.45)]">
+                Operate.
+              </span>{" "}
+              Earn.
+            </h1>
+
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
+              FIRO turns humanoid robots into yield-generating assets. You own the unit.
+              FIRO runs the ops. You track utilization, uptime, and payouts.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#roi"
+                className="rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold shadow-soft hover:opacity-95"
+              >
+                Start simulation
+              </a>
+              <a
+                href="#join"
+                className="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/15"
+              >
+                Join the pilot
+              </a>
+            </div>
+
+            <div className="mt-10 grid max-w-lg grid-cols-3 gap-4 rounded-2xl bg-white/10 p-5 backdrop-blur">
+              <Metric
+                label="Est. monthly"
+                value={
+                  <span>
+                    $<span data-counter>0</span>
+                  </span>
+                }
+              />
+              <Metric label="Utilization" value="42–65%" />
+              <Metric label="Uptime" value="99.1%" />
+            </div>
+
+            <p className="mt-3 text-xs text-white/55">
+              Season 0: Events -> Season 1: Venues -> Season 2: Hospitality.
+            </p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div>
+      <div className="text-xs text-white/60">{label}</div>
+      <div className="mt-1 text-lg font-semibold tracking-tight">{value}</div>
+    </div>
+  );
+}

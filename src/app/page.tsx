@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav";
 import LevelUpBar from "@/components/LevelUpBar";
-import HeroParallax from "@/components/sections/HeroParallax";
+import VideoHero from "@/components/sections/VideoHero";
 import Lore from "@/components/sections/Lore";
 import Levels from "@/components/sections/Levels";
 import StickySwap from "@/components/sections/StickySwap";
@@ -13,7 +13,7 @@ export default function Page() {
     <main id="top">
       <Nav />
       <LevelUpBar />
-      <HeroParallax />
+      <VideoHero />
       <Lore />
       <Levels />
       <div id="thesis">
