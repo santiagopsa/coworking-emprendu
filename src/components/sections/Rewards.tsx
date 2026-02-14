@@ -12,13 +12,14 @@ export default function Rewards() {
               Track the run. Claim the payout.
             </h2>
             <p className="mt-4 text-white/70">
-              Every deployment logs utilization and uptime. You get a clean monthly statement and a dashboard that shows what’s real.
+              Base case targets around $2,000 net monthly on entry units priced from about $30k.
+              Every deployment logs utilization and uptime so payouts are measurable and auditable.
             </p>
 
             <div className="mt-8 grid gap-3 md:grid-cols-3">
-              <Loot title="Utilization" value="58%" />
+              <Loot title="Utilization" value="52%" />
               <Loot title="Uptime" value="99.2%" />
-              <Loot title="Net payout" value="$3,240" />
+              <Loot title="Net payout (base)" value="$2,000" />
             </div>
           </div>
 

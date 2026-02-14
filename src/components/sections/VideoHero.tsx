@@ -16,7 +16,7 @@ export default function VideoHero() {
         "[data-counter]",
         { innerText: 0 },
         {
-          innerText: 3240,
+          innerText: 2000,
           duration: 1.2,
           ease: "power2.out",
           snap: { innerText: 1 },
@@ -72,8 +72,8 @@ export default function VideoHero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-              FIRO turns humanoid robots into yield-generating assets. You own the unit.
-              FIRO runs the ops. You track utilization, uptime, and payouts.
+              Basic units start around $30k. FIRO operates deployment so owners can target
+              around $2k net monthly in the base case, with full utilization and payout visibility.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -100,7 +100,7 @@ export default function VideoHero() {
                   </span>
                 }
               />
-              <Metric label="Utilization" value="42–65%" />
+              <Metric label="Asset price" value="From $30k" />
               <Metric label="Uptime" value="99.1%" />
             </div>
 

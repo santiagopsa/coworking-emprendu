@@ -4,8 +4,8 @@ import { useMemo, useState } from "react";
 import Container from "../ui/Container";
 
 export default function RoiCalc() {
-  const [days, setDays] = useState(12);
-  const [rate, setRate] = useState(450);
+  const [days, setDays] = useState(8);
+  const [rate, setRate] = useState(320);
   const [ops, setOps] = useState(0.22);
 
   const result = useMemo(() => {
@@ -24,8 +24,8 @@ export default function RoiCalc() {
               Model your return with visible assumptions.
             </h2>
             <p className="mt-4 text-firo-muted">
-              This is an estimate range — final numbers depend on utilization, event mix,
-              and operational requirements.
+              Base case targets around $2,000 net monthly for a unit priced near $30,000.
+              Final numbers depend on utilization, event mix, and operational requirements.
             </p>
 
             <div className="mt-8 space-y-6 rounded-2xl border border-firo-line bg-firo-bg p-6">
