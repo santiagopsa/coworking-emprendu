@@ -18,7 +18,10 @@ export default function Nav({ locale = "en" }: NavProps) {
     : pathname === "/"
       ? "/es"
       : `/es${pathname}`;
-  const homeHref = isHomePath ? "#top" : isEs ? "/es" : "/";
+  const homePath = isEs ? "/es" : "/";
+  const homeHref = isHomePath ? "#top" : homePath;
+  const anchorHref = (id: "thesis" | "roi" | "quote") =>
+    isHomePath ? `#${id}` : `${homePath}#${id}`;
   const investorsHref = isEs ? "/es/investors" : "/investors";
   const aboutHref = isEs ? "/es/about" : "/about";
 
@@ -39,9 +42,9 @@ export default function Nav({ locale = "en" }: NavProps) {
         <nav className="hidden items-center gap-7 text-sm text-white/70 md:flex">
           <a href={investorsHref} className="hover:text-white">{isEs ? "Inversionistas" : "Investors"}</a>
           <a href={aboutHref} className="hover:text-white">{isEs ? "Nosotros" : "About"}</a>
-          <a href="#thesis" className="hover:text-white">{isEs ? "Tesis" : "Thesis"}</a>
-          <a href="#roi" className="hover:text-white">ROI</a>
-          <a href="#quote" className="hover:text-white">{isEs ? "Contacto" : "Contact"}</a>
+          <a href={anchorHref("thesis")} className="hover:text-white">{isEs ? "Tesis" : "Thesis"}</a>
+          <a href={anchorHref("roi")} className="hover:text-white">ROI</a>
+          <a href={anchorHref("quote")} className="hover:text-white">{isEs ? "Contacto" : "Contact"}</a>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -52,13 +55,13 @@ export default function Nav({ locale = "en" }: NavProps) {
             {isEs ? "EN" : "ES"}
           </a>
           <a
-            href="#quote"
+            href={anchorHref("quote")}
             className="rounded-xl bg-white/10 px-3 py-2 text-sm font-semibold hover:bg-white/15 md:px-4"
           >
             {isEs ? "Cotizar" : "Get a quote"}
           </a>
           <a
-            href="#quote"
+            href={anchorHref("quote")}
             className="rounded-xl bg-firo-blue px-3 py-2 text-sm font-semibold hover:opacity-95 md:px-4"
           >
             {isEs ? "Hablar con FIRO" : "Talk to FIRO"}
