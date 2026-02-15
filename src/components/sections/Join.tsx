@@ -10,7 +10,7 @@ export default function Join({ locale = "en" }: JoinProps) {
     <section id="join" className="bg-white py-24">
       <Container>
         <div className="rounded-3xl border border-firo-line bg-firo-bg p-8 shadow-soft md:p-10">
-          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+          <div className="grid gap-8 md:grid-cols-2 md:items-start">
             <div>
               <div className="text-sm font-semibold text-firo-blue">{isEs ? "Accion para inversionistas" : "Investor action"}</div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
@@ -23,34 +23,63 @@ export default function Join({ locale = "en" }: JoinProps) {
               </p>
             </div>
 
-            <div className="grid gap-4">
-              <a
-                href="mailto:hello@firo.ai?subject=FIRO%20Owner%20Waitlist"
-                className="rounded-2xl bg-white p-6 shadow-soft hover:opacity-95"
+            <div className="rounded-2xl bg-white p-6 shadow-soft">
+              <form
+                action="https://formsubmit.co/santiagopsa@gmail.com"
+                method="POST"
+                className="space-y-4"
               >
-                <div className="text-lg font-semibold">
-                  {isEs ? "Unirme a la lista de inversionistas" : "Join the Investor Waitlist"}
-                </div>
-                <div className="mt-1 text-firo-muted">
-                  {isEs
-                    ? "Quiero documentos para inversionistas, escenarios esperados de pagos y siguientes pasos."
-                    : "I want investor documents, expected payout scenarios, and next-step onboarding."}
-                </div>
-              </a>
+                <input type="hidden" name="_subject" value="FIRO Investor Waitlist" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
 
-              <a
-                href="mailto:hello@firo.ai?subject=FIRO%20Event%20Quote"
-                className="rounded-2xl bg-firo-navy p-6 text-white shadow-soft hover:opacity-95"
-              >
-                <div className="text-lg font-semibold">
-                  {isEs ? "Soy un socio de despliegue" : "I’m a deployment partner"}
+                <div>
+                  <label className="mb-1 block text-sm font-medium text-firo-text" htmlFor="name">
+                    {isEs ? "Nombre" : "Name"}
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full rounded-xl border border-firo-line bg-white px-4 py-3 text-sm outline-none focus:border-firo-blue"
+                    placeholder={isEs ? "Tu nombre completo" : "Your full name"}
+                  />
                 </div>
-                <div className="mt-1 text-white/70">
-                  {isEs
-                    ? "Puedo colocar robots y quiero hablar de demanda, contratos y programacion."
-                    : "I can place robots and want to discuss demand, contracts, and scheduling."}
+
+                <div>
+                  <label className="mb-1 block text-sm font-medium text-firo-text" htmlFor="email">
+                    {isEs ? "Correo electronico" : "Email"}
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full rounded-xl border border-firo-line bg-white px-4 py-3 text-sm outline-none focus:border-firo-blue"
+                    placeholder={isEs ? "tu@email.com" : "you@email.com"}
+                  />
                 </div>
-              </a>
+
+                <div>
+                  <label className="mb-1 block text-sm font-medium text-firo-text" htmlFor="phone">
+                    {isEs ? "Telefono" : "Phone"}
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full rounded-xl border border-firo-line bg-white px-4 py-3 text-sm outline-none focus:border-firo-blue"
+                    placeholder={isEs ? "+57 300 000 0000" : "+1 (555) 000-0000"}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                >
+                  {isEs ? "Unirme a la lista de inversionistas" : "Join the Investor Waitlist"}
+                </button>
+              </form>
             </div>
           </div>
 
