@@ -1,5 +1,30 @@
+import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Container from "@/components/ui/Container";
+
+export const metadata: Metadata = {
+  title: "Sobre FIRO | Tesis, equipo y modelo operativo",
+  description:
+    "Conoce que es FIRO, para quien es, que problema resuelve, como funciona el modelo y la vision de crecimiento en activos roboticos.",
+  alternates: {
+    canonical: "/es/about",
+  },
+  openGraph: {
+    locale: "es_ES",
+    title: "Sobre FIRO | Tesis, equipo y modelo operativo",
+    description:
+      "Resumen de FIRO para inversionistas y entusiastas: tesis de mercado, operacion y contacto.",
+    url: "/es/about",
+    images: [
+      {
+        url: "/assets/hero/dashboard.png",
+        width: 1200,
+        height: 800,
+        alt: "Resumen de FIRO y su modelo operativo",
+      },
+    ],
+  },
+};
 
 export default function AboutPageEs() {
   return (
@@ -84,18 +109,6 @@ export default function AboutPageEs() {
             La robotica sera infraestructura operativa. Nuestra tesis es que propiedad temprana
             + operacion disciplinada construye cashflow escalable y transparente.
           </p>
-        </Container>
-      </section>
-
-      <section className="bg-firo-bg py-20">
-        <Container>
-          <div className="rounded-3xl border border-firo-line bg-white p-8 shadow-soft md:p-10">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Equipo</h2>
-            <p className="mt-3 text-firo-muted">
-              Ingeniero electronico, con background en tech y experiencia escalando startups
-              de modelo inversionista, activo por mas de 15 anos.
-            </p>
-          </div>
         </Container>
       </section>
 

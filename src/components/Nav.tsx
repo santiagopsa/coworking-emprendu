@@ -11,19 +11,21 @@ export default function Nav({ locale = "en" }: NavProps) {
   const pathname = usePathname();
   const pathIsEs = pathname === "/es" || pathname.startsWith("/es/");
   const isEs = locale === "es" || pathIsEs;
+  const isHomePath = pathname === "/" || pathname === "/es";
 
   const switchHref = pathIsEs
     ? pathname.replace(/^\/es/, "") || "/"
     : pathname === "/"
       ? "/es"
       : `/es${pathname}`;
+  const homeHref = isHomePath ? "#top" : isEs ? "/es" : "/";
   const investorsHref = isEs ? "/es/investors" : "/investors";
   const aboutHref = isEs ? "/es/about" : "/about";
 
   return (
     <div className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-firo-navy/70 text-white backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
-        <a href="#top" className="inline-flex items-center" aria-label="Go to top">
+        <a href={homeHref} className="inline-flex items-center" aria-label="Go to main page">
           <Image
             src="/assets/brand/firo-logo.png"
             alt="FIRO"

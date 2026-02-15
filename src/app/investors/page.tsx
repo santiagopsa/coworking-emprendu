@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Container from "@/components/ui/Container";
+import { getFaqPageSchema } from "@/lib/seoSchemas";
 
 const thesisPoints = [
   "La robotica humanoide ya salio de la fase demo y entro en despliegues productivos.",
@@ -70,10 +72,44 @@ const faqs = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "FIRO Investors | Thesis, unit economics, risks, and FAQ",
+  description:
+    "Investor brief covering FIRO market thesis, unit economics, risk mitigation, competitive map, and direct investor contact.",
+  alternates: {
+    canonical: "/investors",
+  },
+  openGraph: {
+    title: "FIRO Investors | Thesis, unit economics, risks, and FAQ",
+    description:
+      "Explore FIRO investor model with transparent assumptions, risk controls, and contact form.",
+    url: "/investors",
+    images: [
+      {
+        url: "/assets/hero/dashboard.png",
+        width: 1200,
+        height: 800,
+        alt: "FIRO investor brief",
+      },
+    ],
+  },
+};
+
 export default function InvestorsPage() {
+  const faqSchema = getFaqPageSchema(
+    faqs.map((item) => ({
+      question: item.q,
+      answer: item.a,
+    }))
+  );
+
   return (
     <main id="top">
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <section className="bg-gradient-to-b from-firo-navy via-[#0B1430] to-[#070B14] pb-20 pt-28 text-white">
         <Container>
