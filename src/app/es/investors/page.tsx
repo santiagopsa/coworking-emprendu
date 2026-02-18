@@ -127,7 +127,7 @@ export default function InvestorsPageEs() {
       <section className="bg-gradient-to-b from-firo-blue via-firo-blue to-firo-muted pb-20 pt-28 text-white">
         <Container>
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold text-firo-blue">Inversionistas</div>
+            <div className="text-sm font-semibold text-black">Inversionistas</div>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">
               Resumen de inversion FIRO.
             </h1>
@@ -279,7 +279,7 @@ export default function InvestorsPageEs() {
 
               <button
                 type="submit"
-                className="md:col-span-3 rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                className="md:col-span-3 rounded-xl bg-[#FDE774] px-5 py-3 text-sm font-semibold text-black hover:opacity-95"
               >
                 Solicitar informacion para inversionistas
               </button>

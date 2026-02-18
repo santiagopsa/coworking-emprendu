@@ -82,22 +82,22 @@ export default function VideoHero({ locale = "en" }: VideoHeroProps) {
               </a>
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-firo-line bg-white/80 px-4 py-2 text-sm text-black">
-              <span className="h-2 w-2 rounded-full bg-firo-blue" />
-              {isEs ? "PeakU + Inspira Coworking" : "PeakU + Inspira Coworking"}
+              <span className="h-2 w-2 rounded-full bg-[#FDE774]" />
+              {isEs ? "PeakU + Emprendu Coworking" : "PeakU + Emprendu Coworking"}
             </div>
 
             <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
               {isEs ? (
                 <>
-                  Publica tu vacante desde Inspira y recibe
-                  <span className="text-firo-blue drop-shadow-[0_0_22px_rgba(94,173,76,.45)]">
+                  Publica tu vacante desde Emprendu y recibe
+                  <span className="text-black drop-shadow-[0_0_22px_rgba(94,173,76,.45)]">
                     {" "}talento especializado de alto nivel.
                   </span>
                 </>
               ) : (
                 <>
-                  Post your role through Inspira and access
-                  <span className="text-firo-blue drop-shadow-[0_0_22px_rgba(94,173,76,.45)]">
+                  Post your role through Emprendu and access
+                  <span className="text-black drop-shadow-[0_0_22px_rgba(94,173,76,.45)]">
                     {" "}top specialized talent in Colombia.
                   </span>
                 </>
@@ -106,14 +106,14 @@ export default function VideoHero({ locale = "en" }: VideoHeroProps) {
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-black md:text-lg">
               {isEs
-                ? "PeakU tiene acceso a la base de talento especializado mas grande de Colombia. En alianza con Inspira, la comunidad obtiene acceso exclusivo para publicar ofertas y recibir candidatos listos para evaluar."
-                : "PeakU has access to the largest specialized talent database in Colombia. Through Inspira, the community gets exclusive access to publish roles and receive qualified candidates."}
+                ? "PeakU tiene acceso a la base de talento especializado mas grande de Colombia. En alianza con Emprendu, la comunidad obtiene acceso exclusivo para publicar ofertas y recibir candidatos listos para evaluar."
+                : "PeakU has access to the largest specialized talent database in Colombia. Through Emprendu, the community gets exclusive access to publish roles and receive qualified candidates."}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#join"
-                className="rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white shadow-soft hover:opacity-95"
+                className="rounded-xl bg-[#FDE774] px-5 py-3 text-sm font-semibold text-black shadow-soft hover:opacity-95"
               >
                 {isEs ? "Publicar oferta en PeakU" : "Post a role on PeakU"}
               </a>

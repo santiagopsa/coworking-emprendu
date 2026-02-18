@@ -6,8 +6,8 @@
   --color-firo-blue: #5ead4c;
   --color-firo-violet: #5ead4c;
   --color-firo-bg: #ffffff;
-  --color-firo-text: #5ead4c;
-  --color-firo-muted: #bdbdbd;
+  --color-firo-text: #000000;
+  --color-firo-muted: #000000;
   --color-firo-line: #bdbdbd;
   --color-firo-success: #5ead4c;
   --color-firo-warn: #bdbdbd;
@@ -16,7 +16,7 @@
 
 :root{
   --bg:#FFFFFF;
-  --text:#5EAD4C;
+  --text:#000000;
 }
 
 html, body { height: 100%; }

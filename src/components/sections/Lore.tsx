@@ -39,8 +39,8 @@ export default function Lore({ locale = "en" }: LoreProps) {
     <section ref={root} id="beneficios" className="bg-firo-bg py-24 text-firo-text">
       <Container>
         <div className="max-w-3xl">
-          <div data-reveal className="text-sm font-semibold text-firo-blue">
-            {isEs ? "Beneficios para la comunidad Inspira" : "Benefits for Inspira community"}
+          <div data-reveal className="text-sm font-semibold text-black">
+            {isEs ? "Beneficios para la comunidad Emprendu" : "Benefits for Emprendu community"}
           </div>
           <h2 data-reveal className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
             {isEs
@@ -49,8 +49,8 @@ export default function Lore({ locale = "en" }: LoreProps) {
           </h2>
           <p data-reveal className="mt-4 text-firo-muted">
             {isEs
-              ? "Inspira ofrece a su comunidad acceso exclusivo a PeakU para atraer talento de alto nivel, evaluar mejor y contratar con mas confianza."
-              : "Inspira gives its community exclusive access to PeakU to attract better candidates and hire with confidence."}
+              ? "Emprendu ofrece a su comunidad acceso exclusivo a PeakU para atraer talento de alto nivel, evaluar mejor y contratar con mas confianza."
+              : "Emprendu gives its community exclusive access to PeakU to attract better candidates and hire with confidence."}
           </p>
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">

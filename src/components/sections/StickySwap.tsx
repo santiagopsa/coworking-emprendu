@@ -8,13 +8,13 @@ const cards = [
   { title: "Complete candidate report", desc: "Every shortlisted profile includes technical results, personality insights, and hiring recommendation." },
   { title: "Faster shortlisting", desc: "Assessment-backed filtering helps your team spend time only with high-fit candidates." },
   { title: "Higher decision confidence", desc: "Hiring managers receive objective evidence, not only resumes and opinions." },
-  { title: "Exclusive coworking advantage", desc: "Inspira companies publish with a differentiated channel to reach top talent." },
+  { title: "Exclusive coworking advantage", desc: "Emprendu companies publish with a differentiated channel to reach top talent." },
 ];
 const cardsEs = [
   { title: "Reporte completo por candidato", desc: "Cada perfil preseleccionado incluye resultados tecnicos, rasgos de personalidad y recomendacion." },
   { title: "Preseleccion mas rapida", desc: "El filtrado con evaluaciones permite enfocar entrevistas en perfiles de mayor ajuste." },
   { title: "Decisiones con mas certeza", desc: "Los lideres reciben evidencia objetiva para decidir con seguridad." },
-  { title: "Ventaja exclusiva para Inspira", desc: "Las empresas del Coworking publican en un canal diferenciado para atraer mejor talento." },
+  { title: "Ventaja exclusiva para Emprendu", desc: "Las empresas del Coworking publican en un canal diferenciado para atraer mejor talento." },
 ];
 
 type StickySwapProps = {
@@ -58,9 +58,9 @@ export default function StickySwap({ locale = "en" }: StickySwapProps) {
       <Container>
         <div className="grid gap-10 md:grid-cols-2">
           <div className="md:sticky md:top-24 md:h-fit">
-            <div className="text-sm font-semibold text-firo-blue">{isEs ? "Resultados esperados" : "Expected outcomes"}</div>
+            <div className="text-sm font-semibold text-black">{isEs ? "Resultados esperados" : "Expected outcomes"}</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              {isEs ? "Lo que obtiene tu equipo al publicar con PeakU desde Inspira" : "What your team gets by posting through Inspira"}
+              {isEs ? "Lo que obtiene tu equipo al publicar con PeakU desde Emprendu" : "What your team gets by posting through Emprendu"}
             </h2>
             <p className="mt-4 max-w-lg text-firo-muted">
               {isEs

@@ -87,13 +87,13 @@ export default function HeroParallax() {
           <div className="grid w-full gap-10 md:grid-cols-2 md:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/80">
-                <span className="h-2 w-2 rounded-full bg-firo-blue" />
+                <span className="h-2 w-2 rounded-full bg-[#FDE774]" />
                 FIRO Robotic Assets
               </div>
 
               <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
                 Deploy.{" "}
-                <span className="text-firo-blue drop-shadow-[0_0_22px_rgba(94,173,76,.45)]">
+                <span className="text-black drop-shadow-[0_0_22px_rgba(94,173,76,.45)]">
                   Operate.
                 </span>{" "}
                 Earn.

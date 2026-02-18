@@ -34,7 +34,7 @@ export default function AboutPageEs() {
       <section className="bg-gradient-to-b from-firo-blue via-firo-blue to-firo-muted pb-20 pt-28 text-white">
         <Container>
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold text-firo-blue">Sobre FIRO</div>
+            <div className="text-sm font-semibold text-black">Sobre FIRO</div>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">
               Robotica humanoide estructurada para cashflow con leasing.
             </h1>
@@ -74,19 +74,19 @@ export default function AboutPageEs() {
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-firo-line bg-white p-6 shadow-soft">
-              <div className="text-sm font-semibold text-firo-blue">1. Financiar leasing</div>
+              <div className="text-sm font-semibold text-black">1. Financiar leasing</div>
               <p className="mt-2 text-firo-muted">
                 El inversionista entra financiando una estructura de leasing mensual.
               </p>
             </div>
             <div className="rounded-2xl border border-firo-line bg-white p-6 shadow-soft">
-              <div className="text-sm font-semibold text-firo-blue">2. Despliegue</div>
+              <div className="text-sm font-semibold text-black">2. Despliegue</div>
               <p className="mt-2 text-firo-muted">
                 FIRO coloca unidades en ambientes de demanda con operacion supervisada.
               </p>
             </div>
             <div className="rounded-2xl border border-firo-line bg-white p-6 shadow-soft">
-              <div className="text-sm font-semibold text-firo-blue">3. Seguimiento y pago</div>
+              <div className="text-sm font-semibold text-black">3. Seguimiento y pago</div>
               <p className="mt-2 text-firo-muted">
                 Se registran bruto, neto operativo, cobertura de leasing y reparto mensual.
               </p>
@@ -153,7 +153,7 @@ export default function AboutPageEs() {
 
               <button
                 type="submit"
-                className="md:col-span-3 rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                className="md:col-span-3 rounded-xl bg-[#FDE774] px-5 py-3 text-sm font-semibold text-black hover:opacity-95"
               >
                 Contactar a FIRO
               </button>

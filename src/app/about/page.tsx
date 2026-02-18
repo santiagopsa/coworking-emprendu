@@ -33,7 +33,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-b from-firo-blue via-firo-blue to-firo-muted pb-20 pt-28 text-white">
         <Container>
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold text-firo-blue">About FIRO</div>
+            <div className="text-sm font-semibold text-black">About FIRO</div>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">
               Humanoid robotics, structured for leasing-backed cashflow.
             </h1>
@@ -73,19 +73,19 @@ export default function AboutPage() {
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-firo-line bg-white p-6 shadow-soft">
-              <div className="text-sm font-semibold text-firo-blue">1. Finance lease</div>
+              <div className="text-sm font-semibold text-black">1. Finance lease</div>
               <p className="mt-2 text-firo-muted">
                 Investor enters by funding a monthly lease structure.
               </p>
             </div>
             <div className="rounded-2xl border border-firo-line bg-white p-6 shadow-soft">
-              <div className="text-sm font-semibold text-firo-blue">2. Deploy</div>
+              <div className="text-sm font-semibold text-black">2. Deploy</div>
               <p className="mt-2 text-firo-muted">
                 FIRO places units in demand environments with operator-led execution.
               </p>
             </div>
             <div className="rounded-2xl border border-firo-line bg-white p-6 shadow-soft">
-              <div className="text-sm font-semibold text-firo-blue">3. Track & payout</div>
+              <div className="text-sm font-semibold text-black">3. Track & payout</div>
               <p className="mt-2 text-firo-muted">
                 Gross, operating net, lease coverage, and payout splits are tracked monthly.
               </p>
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
               <button
                 type="submit"
-                className="md:col-span-3 rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                className="md:col-span-3 rounded-xl bg-[#FDE774] px-5 py-3 text-sm font-semibold text-black hover:opacity-95"
               >
                 Join investor waitlist
               </button>

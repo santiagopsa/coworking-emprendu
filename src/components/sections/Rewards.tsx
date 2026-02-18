@@ -12,14 +12,14 @@ export default function Rewards({ locale = "en" }: RewardsProps) {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <div className="text-sm font-semibold text-firo-blue">{isEs ? "Alianza Inspira + PeakU" : "Inspira + PeakU partnership"}</div>
+            <div className="text-sm font-semibold text-black">{isEs ? "Alianza Emprendu + PeakU" : "Emprendu + PeakU partnership"}</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
               {isEs ? "Una pagina QR para activar vacantes de alto impacto" : "A QR landing page to launch high-impact hiring"}
             </h2>
             <p className="mt-4 text-firo-muted">
               {isEs
-                ? "Este QR conecta a la comunidad de Inspira con una ruta de publicacion exclusiva: mas alcance, mejores filtros y reportes claros para contratar mejor."
-                : "This QR connects Inspira's community with an exclusive publishing route: wider reach, stronger filtering, and clear decision-ready reports."}
+                ? "Este QR conecta a la comunidad de Emprendu con una ruta de publicacion exclusiva: mas alcance, mejores filtros y reportes claros para contratar mejor."
+                : "This QR connects Emprendu's community with an exclusive publishing route: wider reach, stronger filtering, and clear decision-ready reports."}
             </p>
 
             <div className="mt-8 grid gap-3 md:grid-cols-3">

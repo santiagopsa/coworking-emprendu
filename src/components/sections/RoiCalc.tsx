@@ -47,7 +47,7 @@ export default function RoiCalc({ locale = "en" }: RoiCalcProps) {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <div className="text-sm font-semibold text-firo-blue">{isEs ? "Cierre" : "Final step"}</div>
+            <div className="text-sm font-semibold text-black">{isEs ? "Cierre" : "Final step"}</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
               {isEs
                 ? "Cuando cambia la forma de presentar candidatos, cambia la conversacion."

@@ -126,7 +126,7 @@ export default function InvestorsPage() {
       <section className="bg-gradient-to-b from-firo-blue via-firo-blue to-firo-muted pb-20 pt-28 text-white">
         <Container>
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold text-firo-blue">Investors</div>
+            <div className="text-sm font-semibold text-black">Investors</div>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">
               FIRO investor brief.
             </h1>
@@ -278,7 +278,7 @@ export default function InvestorsPage() {
 
               <button
                 type="submit"
-                className="md:col-span-3 rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                className="md:col-span-3 rounded-xl bg-[#FDE774] px-5 py-3 text-sm font-semibold text-black hover:opacity-95"
               >
                 Request investor information
               </button>

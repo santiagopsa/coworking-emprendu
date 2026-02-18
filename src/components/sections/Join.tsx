@@ -12,11 +12,11 @@ export default function Join({ locale = "en" }: JoinProps) {
         <div className="rounded-3xl border border-firo-line bg-firo-bg p-8 shadow-soft md:p-10">
           <div className="grid gap-8 md:grid-cols-2 md:items-start">
             <div>
-              <div className="text-sm font-semibold text-firo-blue">{isEs ? "Publica tu vacante" : "Post your role"}</div>
+              <div className="text-sm font-semibold text-black">{isEs ? "Publica tu vacante" : "Post your role"}</div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
                 {isEs
-                  ? "Acceso exclusivo para empresas de Inspira"
-                  : "Exclusive access for Inspira companies"}
+                  ? "Acceso exclusivo para empresas de Emprendu"
+                  : "Exclusive access for Emprendu companies"}
               </h2>
               <p className="mt-3 text-firo-muted">
                 {isEs
@@ -31,7 +31,7 @@ export default function Join({ locale = "en" }: JoinProps) {
                 method="POST"
                 className="space-y-4"
               >
-                <input type="hidden" name="_subject" value="Inspira - solicitud para publicar vacante" />
+                <input type="hidden" name="_subject" value="Emprendu - solicitud para publicar vacante" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
 
@@ -90,7 +90,7 @@ export default function Join({ locale = "en" }: JoinProps) {
 
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-firo-blue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                  className="w-full rounded-xl bg-[#FDE774] px-5 py-3 text-sm font-semibold text-black hover:opacity-95"
                 >
                   {isEs ? "Publicar oferta en PeakU" : "Post a role on PeakU"}
                 </button>

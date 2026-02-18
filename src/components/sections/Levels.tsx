@@ -8,7 +8,7 @@ const levels = [
   {
     level: "Step 1",
     title: "Publish your role",
-    earns: "You submit your vacancy from Inspira",
+    earns: "You submit your vacancy from Emprendu",
     does: "Exclusive access for coworking community members",
   },
   {
@@ -34,7 +34,7 @@ const levelsEs = [
   {
     level: "Paso 1",
     title: "Publica tu oferta",
-    earns: "Subes tu vacante desde Inspira",
+    earns: "Subes tu vacante desde Emprendu",
     does: "Acceso exclusivo para la comunidad del Coworking",
   },
   {
@@ -94,9 +94,9 @@ export default function Levels({ locale = "en" }: LevelsProps) {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div className="md:sticky md:top-28">
-            <div className="text-sm font-semibold text-firo-blue">{isEs ? "Proceso" : "Process"}</div>
+            <div className="text-sm font-semibold text-black">{isEs ? "Proceso" : "Process"}</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              {isEs ? "Asi funciona la seleccion para empresas de Inspira" : "How hiring works for Inspira companies"}
+              {isEs ? "Asi funciona la seleccion para empresas de Emprendu" : "How hiring works for Emprendu companies"}
             </h2>
             <p className="mt-4 text-firo-muted">
               {isEs
@@ -114,7 +114,7 @@ export default function Levels({ locale = "en" }: LevelsProps) {
               >
                 <div className="flex items-center justify-between">
                   <div className="text-xs font-semibold text-firo-muted">{l.level}</div>
-                  <div className="h-2 w-2 rounded-full bg-firo-blue opacity-70 group-hover:opacity-100" />
+                  <div className="h-2 w-2 rounded-full bg-[#FDE774] opacity-70 group-hover:opacity-100" />
                 </div>
                 <div className="mt-2 text-xl font-semibold tracking-tight">{l.title}</div>
 
